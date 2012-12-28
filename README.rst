@@ -4,6 +4,13 @@ django-any-imagefield
 This module offers a abstraction over the various image fields,
 so allow third party applications can provide an imagefield at the authors choice.
 
+Supported image browsers:
+
+* django-filebrowser-no-grapelli_
+* Django's default ``ImageField`` featuring a preview.
+* SORL-thumbnail_ (currently disabled)
+
+
 Installation
 ============
 
@@ -55,3 +62,6 @@ If you have any other valuable contribution, suggestion or idea,
 please let us know as well because we will look into it.
 Pull requests are welcome too. :-)
 
+
+.. _django-filebrowser-no-grapelli: https://github.com/wardi/django-filebrowser-no-grappelli
+.. _SORL-thumbnail: https://github.com/sorl/sorl-thumbnail
