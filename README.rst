@@ -6,7 +6,7 @@ so allow third party applications can provide an imagefield at the authors choic
 
 Supported image browsers:
 
-* django-filebrowser-no-grapelli_
+* django-filebrowser-no-grappelli_
 * Django's default ``ImageField`` featuring a preview.
 * SORL-thumbnail_ (currently disabled)
 
@@ -25,18 +25,16 @@ Or the current folder can be installed::
 Configuration
 -------------
 
-Next, create a project which uses the CMS::
-
-    cd ..
-    django-admin.py startproject demo
-
-It should have the following settings::
+Add the module to the installed apps::
 
     INSTALLED_APPS += (
         'any_imagefield',
     )
 
-Finally, a model can use the ``AnyImageField`` field::
+Usage
+-----
+
+In a Django model, the field can be included::
 
     from django.db import models
     from any_imagefield.models import AnyImageField
@@ -52,6 +50,12 @@ Finally, a model can use the ``AnyImageField`` field::
         def __unicode__(self):
             return self.title
 
+By default, the ``AnyImageField`` displays a standard ``ImageField`` with a preview thumbnail.
+When django-filebrowser-no-grappelli_ is installed, it will use the ``FileBrowseField`` from
+that package to display the file/image browser. When your package has it's own ``ImageField`` variant/subclass,
+please consider to add support for it in this package.
+
+
 Contributing
 ------------
 
@@ -63,5 +67,5 @@ please let us know as well because we will look into it.
 Pull requests are welcome too. :-)
 
 
-.. _django-filebrowser-no-grapelli: https://github.com/wardi/django-filebrowser-no-grappelli
+.. _django-filebrowser-no-grappelli: https://github.com/wardi/django-filebrowser-no-grappelli
 .. _SORL-thumbnail: https://github.com/sorl/sorl-thumbnail
