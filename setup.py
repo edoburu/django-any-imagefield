@@ -12,8 +12,11 @@ setup(
         'Django',
     ],
     extras_require = {
-        'filebrowser': ['django-file-browser'],
+        'filebrowser': ['django-filebrowser'],
     },
+    dependency_links = [
+        'git+https://github.com/wardi/django-filebrowser-no-grappelli.git#egg=django-filebrowser',
+    ],
 
     description='A switchable ImageField for third party Django applications',
     long_description=open(join(dirname(__file__), 'README.rst')).read(),
