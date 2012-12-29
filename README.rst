@@ -6,8 +6,8 @@ so allow third party applications can provide an imagefield at the authors choic
 
 Supported image fields:
 
-* django-filebrowser-no-grappelli_, which includes a file selector.
-* SORL-thumbnail_ (currently disabled)
+* django-filebrowser-no-grappelli_, which includes a preview and file selector.
+* SORL-thumbnail_, which includes a preview
 * Django's default ``ImageField``, with a preview added to it.
 
 

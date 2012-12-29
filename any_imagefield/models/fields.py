@@ -7,9 +7,8 @@ from django.conf import settings
 # Include the imagefield.
 if 'filebrowser' in settings.INSTALLED_APPS:
     from .backends.filebrowser import FileBrowseField, ImageBrowseField
-# Disabled because it has no sane default CSS:
-#elif 'sorl.thumbnail' in settings.INSTALLED_APPS:
-#    from .backends.sorl import FileBrowseField, ImageBrowseField
+elif 'sorl.thumbnail' in settings.INSTALLED_APPS:
+    from .backends.sorl import FileBrowseField, ImageBrowseField
 elif 'any_imagefield' in settings.INSTALLED_APPS:
     # Can use template-based previews
     from .backends.preview import FileBrowseField, ImageBrowseField
