@@ -10,8 +10,12 @@ if 'filebrowser' in settings.INSTALLED_APPS:
 # Disabled because it has no sane default CSS:
 #elif 'sorl.thumbnail' in settings.INSTALLED_APPS:
 #    from .backends.sorl import FileBrowseField, ImageBrowseField
-else:
+elif 'any_imagefield' in settings.INSTALLED_APPS:
+    # Can use template-based previews
     from .backends.preview import FileBrowseField, ImageBrowseField
+else:
+    # Can't use template based either, use Plain old Django fields
+    from .backends.default import FileBrowseField, ImageBrowseField
 
 
 # This is included for documentation, consistent south migrations and editor code completion:
