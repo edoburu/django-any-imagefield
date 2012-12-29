@@ -1,10 +1,10 @@
 from django.db import models
-from .default import FileBrowseField
+from .default import AnyFileField
 
-__all__ = ('FileBrowseField', 'ImageBrowseField')
+__all__ = ('AnyFileField', 'AnyImageField')
 
 
-class ImageBrowseField(models.ImageField):
+class AnyImageField(models.ImageField):
     """
     The standard Django `~django.forms.widgets.ImageField` with a preview.
     """
@@ -14,4 +14,4 @@ class ImageBrowseField(models.ImageField):
         kwargs['widget'] = ImagePreviewWidget   # hard override for admin
         defaults = {'form_class': ImagePreviewField}
         defaults.update(kwargs)
-        return super(ImageBrowseField, self).formfield(**defaults)
+        return super(AnyImageField, self).formfield(**defaults)

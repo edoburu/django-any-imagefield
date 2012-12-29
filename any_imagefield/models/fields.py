@@ -6,19 +6,19 @@ from django.conf import settings
 
 # Include the imagefield.
 if 'filebrowser' in settings.INSTALLED_APPS:
-    from .backends.filebrowser import FileBrowseField, ImageBrowseField
+    from .backends import filebrowser as active_backend
 elif 'sorl.thumbnail' in settings.INSTALLED_APPS:
-    from .backends.sorl import FileBrowseField, ImageBrowseField
+    from .backends import sorl as active_backend
 elif 'any_imagefield' in settings.INSTALLED_APPS:
     # Can use template-based previews
-    from .backends.preview import FileBrowseField, ImageBrowseField
+    from .backends import preview as active_backend
 else:
     # Can't use template based either, use Plain old Django fields
-    from .backends.default import FileBrowseField, ImageBrowseField
+    from .backends import default as active_backend
 
 
 # This is included for documentation, consistent south migrations and editor code completion:
-class FileBrowseField(FileBrowseField):
+class AnyFileField(active_backend.AnyFileField):
     """
     The file browse field based on django-filebrowser, or any other filebrowser.
     It's a drop-in replacement for the django :class:`~django.db.models.FileField`
@@ -28,9 +28,9 @@ class FileBrowseField(FileBrowseField):
     """
 
 
-class ImageBrowseField(ImageBrowseField):
+class AnyImageField(active_backend.AnyImageField):
     """
-    The image browse field based on django-filebrowser, or any other filebrowser.
+    The image field based on django-filebrowser, SORL thumbnail or any other image library.
     It's a drop-in replacement for the django :class:`~django.db.models.ImageField`
 
     When *django-filebrowser* is not installed, it will display the
@@ -42,10 +42,10 @@ class ImageBrowseField(ImageBrowseField):
 try:
     from south.modelsinspector import add_introspection_rules
     add_introspection_rules([], [
-        "^any_imagefield\.models\.fields\.FileBrowseField",
-        "^any_imagefield\.models\.fields\.ImageBrowseField",
-        "^any_imagefield\.models\.fields\.backends\.([^.]+)\.FileBrowseField",
-        "^any_imagefield\.models\.fields\.backends\.([^.]+)\.ImageBrowseField",
+        "^any_imagefield\.models\.fields\.AnyFileField",
+        "^any_imagefield\.models\.fields\.AnyImageField",
+        "^any_imagefield\.models\.fields\.backends\.([^.]+)\.AnyFileField",
+        "^any_imagefield\.models\.fields\.backends\.([^.]+)\.AnyImageField",
     ])
 except ImportError:
     pass

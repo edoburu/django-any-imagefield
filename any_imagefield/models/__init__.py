@@ -1,5 +1,5 @@
-from .fields import FileBrowseField, ImageBrowseField
+from .fields import AnyFileField, AnyImageField
 
 __all__ = (
-    'FileBrowseField', 'ImageBrowseField',
+    'AnyFileField', 'AnyImageField',
 )

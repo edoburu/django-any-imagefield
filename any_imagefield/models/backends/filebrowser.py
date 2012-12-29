@@ -1,8 +1,8 @@
 from __future__ import absolute_import
-from filebrowser.fields import FileBrowseField as FileBrowseFieldBase
+from filebrowser.fields import FileBrowseField
 
 
-class FileBrowseField(FileBrowseFieldBase):
+class AnyFileField(FileBrowseField):
     """
     The file browse field based on django-filebrowser.
     """
@@ -14,10 +14,10 @@ class FileBrowseField(FileBrowseFieldBase):
         }
 
         defaults.update(kwargs)
-        super(FileBrowseField, self).__init__(*args, **defaults)
+        super(AnyFileField, self).__init__(*args, **defaults)
 
 
-class ImageBrowseField(FileBrowseField):
+class AnyImageField(FileBrowseField):
     """
     The image browse field based on django-filebrowser.
     """
@@ -29,4 +29,4 @@ class ImageBrowseField(FileBrowseField):
         }
 
         defaults.update(kwargs)
-        super(ImageBrowseField, self).__init__(*args, **defaults)
+        super(AnyImageField, self).__init__(*args, **defaults)
