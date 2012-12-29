@@ -10,7 +10,7 @@ __all__ = ('FileBrowseField', 'ImageBrowseField')
 class FixedAdminImageWidget(AdminImageWidget):
     # Fix the layout in the SORL AdminImageWidget
     template_with_initial = u'%(clear_template)s%(input_text)s: %(input)s'
-    template_with_clear = u'<label style="width:auto; float: none; display: inline;" for="%(clear_checkbox_id)s">%(clear)s %(clear_checkbox_label)s</label><br />'
+    template_with_clear = u'<span class="clearable-file-input">%(clear)s <label style="width: auto;" for="%(clear_checkbox_id)s">%(clear_checkbox_label)s</label></span><br />'
 
     def render(self, name, value, attrs=None):
         # Make sure the help text is displayed below the widget.
