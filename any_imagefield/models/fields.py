@@ -36,6 +36,16 @@ class AnyImageField(active_backend.AnyImageField):
     When *django-filebrowser* is not installed, it will display the
     standard :class:`~django.db.models.ImageField` with a preview attached to it.
     """
+    def __init__(self, *args, **kwargs):
+        # django-filebrowser has no concept of a 'width_field',
+        # only Django's ImageField has this feature.
+        if 'width_field' in kwargs:
+            raise NotImplementedError("Unable to use 'width_field' in AnyImageField, not all backends support this feature.")
+        if 'height_field' in kwargs:
+            raise NotImplementedError("Unable to use 'height_field' in AnyImageField, not all backends support this feature.")
+
+        super(AnyImageField, self).__init__(*args, **kwargs)
+
 
 
 # Tell South how to create custom fields
