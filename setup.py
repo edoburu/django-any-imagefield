@@ -8,8 +8,8 @@ setup(
     version='0.8.0',
     license='Apache License, Version 2.0',
 
-    install_requires=[
-        'Django',
+    requires=[
+        'Django (>=1.3)',   # Using staticfiles
     ],
     extras_require = {
         'filebrowser': ['django-filebrowser'],
@@ -34,10 +34,14 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
+        'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Framework :: Django',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Topic :: Internet :: WWW/HTTP',
+        'Topic :: Software Development :: Libraries :: Python Modules',
     ]
 )
