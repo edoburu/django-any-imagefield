@@ -18,7 +18,7 @@ class CompatibleFileBrowseField(FileBrowseField):
 
     def to_python(self, value):
         value = super(CompatibleFileBrowseField, self).to_python(value)
-        if value.__class__ is FileObject:
+        if value.__class__ is FileObject and 'url' not in value.__class__.__dict__:
             value.__class__ = PatchedFileObject
         return value
 
