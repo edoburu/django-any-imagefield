@@ -1,5 +1,5 @@
-Changes in version 0.8.1 (in development)
------------------------------------------
+Changes in version 0.8.1
+------------------------
 
 * Fixed missing ``url`` property for images when using django-filebrowser-no-grappelli_ instead of Django's ``ImageField``.
   This patch is not applied for the django-filebrowser-no-grappelli-django14_ fork, which does provide an ``url`` property.

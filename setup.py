@@ -5,7 +5,7 @@ from os.path import dirname, join
 
 setup(
     name='django-any-imagefield',
-    version='0.8.0',
+    version='0.8.1',
     license='Apache License, Version 2.0',
 
     requires=[
