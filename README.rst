@@ -52,7 +52,7 @@ In a Django model, the field can be included::
             return self.title
 
 By default, the ``AnyImageField`` displays a standard ``ImageField`` with a preview thumbnail.
-When django-filebrowser-no-grappelli_ is installed, it will use the ``FileBrowseField`` from
+When django-filebrowser-no-grappelli-django14_ or django-filebrowser-no-grappelli_ is installed, it will use the ``FileBrowseField`` from
 that package to display the file/image browser. When your package has it's own ``ImageField`` variant/subclass,
 please consider to add support for it in this package.
 

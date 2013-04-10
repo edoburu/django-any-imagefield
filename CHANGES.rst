@@ -5,6 +5,8 @@ Changes in version 0.8.1 (in development)
   This patch is not applied for the django-filebrowser-no-grappelli-django14_ fork, which does provide an ``url`` property.
 * Fixed ``format`` setting for certain django-filebrowser forks.
 * Added warning to avoid using ``width_field`` and ``height_field`` because not all backends support those.
+* Point default filebrowser to https://github.com/smacker/django-filebrowser-no-grappelli-django14,
+  so ``pip install django-any-imagefield[filebrowser]`` installs that version.
 
 
 Version 0.8.0

@@ -15,7 +15,7 @@ setup(
         'filebrowser': ['django-filebrowser'],
     },
     dependency_links = [
-        'git+https://github.com/wardi/django-filebrowser-no-grappelli.git#egg=django-filebrowser',
+        'git+https://github.com/smacker/django-filebrowser-no-grappelli-django14#egg=django-filebrowser',
     ],
 
     description='A switchable ImageField for third party Django applications',
