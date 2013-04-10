@@ -1,5 +1,8 @@
 from __future__ import absolute_import
 from filebrowser.fields import FileBrowseField, FileObject
+# The filebrowser can either be:
+#   https://github.com/wardi/django-filebrowser-no-grappelli
+#   https://github.com/smacker/django-filebrowser-no-grappelli-django14
 
 
 class PatchedFileObject(FileObject):
@@ -30,7 +33,7 @@ class AnyFileField(CompatibleFileBrowseField):
     def __init__(self, *args, **kwargs):
         defaults = {
             'max_length': 100,  # Same as django FileField
-            'format': 'Document',
+            'format': 'file',
             'directory': kwargs.pop('upload_to', ''),
         }
 
@@ -45,7 +48,7 @@ class AnyImageField(CompatibleFileBrowseField):
     def __init__(self, *args, **kwargs):
         defaults = {
             'max_length': 100,  # Same as django ImageField
-            'format': 'Image',
+            'format': 'image',  # lowercase is supported by both forks
             'directory': kwargs.pop('upload_to', ''),
         }
 
