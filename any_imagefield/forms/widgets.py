@@ -12,7 +12,11 @@ class ImagePreviewWidget(AdminFileWidget):
     def render(self, name, value, attrs=None):
         is_image = False
         if value:
-            (mime_type, encoding) = mimetypes.guess_type(value.path)
+            if hasattr(value, 'path'):
+                (mime_type, encoding) = mimetypes.guess_type(value.path)
+            else:
+                # Try to guess mime_type from name alone, for remote FileSystems (S3, etc...)
+                (mime_type, encoding) = mimetypes.guess_type(value.name)
             is_image = mime_type and mime_type.startswith('image/')
 
         # Render different field for replacing
