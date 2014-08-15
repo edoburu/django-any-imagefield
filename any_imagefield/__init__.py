@@ -1,1 +1,2 @@
-VERSION = (0, 1, 0)
+# following PEP 386
+__version__ = "0.8.2"

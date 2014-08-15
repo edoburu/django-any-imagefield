@@ -1,3 +1,9 @@
+Changes in version 0.8.2
+------------------------
+
+* Make ``ImagePreviewWidget`` compatible with ``Image`` objects without path attribute
+
+
 Changes in version 0.8.1
 ------------------------
 
