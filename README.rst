@@ -68,6 +68,6 @@ please let us know as well because we will look into it.
 Pull requests are welcome too. :-)
 
 
-.. _django-filebrowser-no-grappelli: https://github.com/smacker/django-filebrowser-no-grappelli-django14
+.. _django-filebrowser-no-grappelli: https://github.com/smacker/django-filebrowser-no-grappelli
 .. _django-filer: https://github.com/stefanfoulis/django-filer
 .. _SORL-thumbnail: https://github.com/sorl/sorl-thumbnail

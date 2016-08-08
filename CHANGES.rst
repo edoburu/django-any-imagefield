@@ -1,3 +1,12 @@
+Changes in 0.9 (2016-08-07)
+---------------------------
+
+* Marked Python 3 support.
+* Added support for django-filer_ fields.
+  Note this means your database uses a different field type; a ``ForeignKey`` to it's models.
+  Hence, this switch can only be done at the start of the project.
+
+
 Changes in version 0.8.2
 ------------------------
 
@@ -27,4 +36,5 @@ of ``django-cmsfields`` (nowadays https://github.com/edoburu/django-any-urlfield
 
 .. _django-filebrowser-no-grappelli: https://github.com/wardi/django-filebrowser-no-grappelli
 .. _django-filebrowser-no-grappelli-django14: https://github.com/smacker/django-filebrowser-no-grappelli-django14
+.. _django-filer: https://github.com/divio/django-filer
 .. _SORL-thumbnail: https://github.com/sorl/sorl-thumbnail
