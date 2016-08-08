@@ -27,10 +27,10 @@ setup(
         'Django (>=1.3)',   # Using staticfiles
     ],
     extras_require = {
-        'filebrowser': ['django-filebrowser-no-grappelli-django14'],
+        'filebrowser': ['django-filebrowser-no-grappelli'],
     },
     dependency_links = [
-        'git+https://github.com/smacker/django-filebrowser-no-grappelli-django14#egg=django-filebrowser-no-grappelli-django14',
+        'git+https://github.com/smacker/django-filebrowser-no-grappelli-django14#egg=django-filebrowser-no-grappelli',
     ],
 
     description='A switchable ImageField for third party Django applications',
