@@ -2,7 +2,7 @@ django-any-imagefield
 =====================
 
 This module offers a abstraction over the various image fields,
-so allow third party applications can provide an imagefield at the authors choice.
+so allow third party applications can provide an imagefield at the project choice.
 
 Supported image fields:
 
@@ -19,14 +19,12 @@ First install the module, preferably in a virtual environment. It can be install
 
     pip install django-any-imagefield
 
-Or the current folder can be installed::
-
-    pip install .
-
 Configuration
 -------------
 
-Add the module to the installed apps::
+Add the module to the installed apps:
+
+.. code-block:: python
 
     INSTALLED_APPS += (
         'any_imagefield',
@@ -35,7 +33,9 @@ Add the module to the installed apps::
 Usage
 -----
 
-In a Django model, the field can be included::
+In a Django model, the field can be included:
+
+.. code-block:: python
 
     from django.db import models
     from any_imagefield.models import AnyImageField
