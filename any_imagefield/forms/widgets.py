@@ -9,7 +9,7 @@ class ImagePreviewWidget(AdminFileWidget):
     """
     template_with_initial = u'%(clear_template)s</p><p>%(input_text)s: %(input)s'
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, *args, **kwargs):
         is_image = False
         if value:
             if hasattr(value, 'path'):
@@ -20,7 +20,7 @@ class ImagePreviewWidget(AdminFileWidget):
             is_image = mime_type and mime_type.startswith('image/')
 
         # Render different field for replacing
-        input_field = super(ImagePreviewWidget, self).render(name, value, attrs)
+        input_field = super(ImagePreviewWidget, self).render(name, value, *args, **kwargs)
         if not value:
             return input_field
         else:
