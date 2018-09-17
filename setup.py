@@ -24,14 +24,11 @@ setup(
     license='Apache 2.0',
 
     requires=[
-        'Django (>=1.3)',   # Using staticfiles
+        'Django (>=1.8)',
     ],
     extras_require = {
-        'filebrowser': ['django-filebrowser-no-grappelli'],
+        'filebrowser': ['django-filebrowser-no-grappelli>=3.7.5'],
     },
-    dependency_links = [
-        'git+https://github.com/smacker/django-filebrowser-no-grappelli-django14#egg=django-filebrowser-no-grappelli',
-    ],
 
     description='A switchable ImageField for third party Django applications',
     long_description=read('README.rst'),
@@ -47,17 +44,24 @@ setup(
 
     zip_safe=False,
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.9',
+        'Framework :: Django :: 1.10',
+        'Framework :: Django :: 1.11',
+        'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2.1',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ]
