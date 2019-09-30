@@ -12,9 +12,9 @@ class FixedSorlAdminImageWidget(AdminImageWidget):
     template_with_initial = u'%(clear_template)s%(input_text)s: %(input)s'
     template_with_clear = u'<span class="clearable-file-input">%(clear)s <label style="width: auto;" for="%(clear_checkbox_id)s">%(clear_checkbox_label)s</label></span><br />'
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         # Make sure the help text is displayed below the widget.
-        orig_output = super(FixedSorlAdminImageWidget, self).render(name, value, attrs)
+        orig_output = super(FixedSorlAdminImageWidget, self).render(name, value, attrs, renderer)
         return mark_safe(
             orig_output \
             + u'<div style="clear: both;"></div>'
