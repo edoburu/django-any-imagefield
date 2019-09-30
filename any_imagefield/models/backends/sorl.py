@@ -14,7 +14,7 @@ class FixedSorlAdminImageWidget(AdminImageWidget):
 
     def render(self, name, value, attrs=None, renderer=None):
         # Make sure the help text is displayed below the widget.
-        orig_output = super(FixedSorlAdminImageWidget, self).render(name, value, attrs, renderer)
+        orig_output = super(FixedSorlAdminImageWidget, self).render(name, value, attrs, renderer=renderer)
         return mark_safe(
             orig_output \
             + u'<div style="clear: both;"></div>'
