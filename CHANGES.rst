@@ -1,3 +1,9 @@
+Changes in 1.1 (2020-03-02)
+---------------------------
+
+* Fixed ``solr.FixedSorlAdminImageWidget.render()`` method for Django 2.1+
+
+
 Changes in 1.0 (2018-09-17)
 ---------------------------
 
