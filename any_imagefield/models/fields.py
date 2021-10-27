@@ -19,7 +19,7 @@ else:
     from .backends import default as active_backend
 
 
-# This is included for documentation, consistent south migrations and editor code completion:
+# This is included for documentation, consistent migrations and editor code completion:
 class AnyFileField(active_backend.AnyFileField):
     """
     The file browse field based on django-filebrowser, or any other filebrowser.
@@ -47,17 +47,3 @@ class AnyImageField(active_backend.AnyImageField):
             raise NotImplementedError("Unable to use 'height_field' in AnyImageField, not all backends support this feature.")
 
         super(AnyImageField, self).__init__(*args, **kwargs)
-
-
-
-# Tell South how to create custom fields
-try:
-    from south.modelsinspector import add_introspection_rules
-    add_introspection_rules([], [
-        "^any_imagefield\.models\.fields\.AnyFileField",
-        "^any_imagefield\.models\.fields\.AnyImageField",
-        "^any_imagefield\.models\.fields\.backends\.([^.]+)\.AnyFileField",
-        "^any_imagefield\.models\.fields\.backends\.([^.]+)\.AnyImageField",
-    ])
-except ImportError:
-    pass
