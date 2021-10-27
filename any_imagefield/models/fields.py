@@ -46,4 +46,4 @@ class AnyImageField(active_backend.AnyImageField):
         if 'height_field' in kwargs:
             raise NotImplementedError("Unable to use 'height_field' in AnyImageField, not all backends support this feature.")
 
-        super(AnyImageField, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)

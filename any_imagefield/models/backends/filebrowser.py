@@ -1,4 +1,3 @@
-from __future__ import absolute_import
 from filebrowser.fields import FileBrowseField, FileObject
 # The filebrowser can either be:
 #   https://github.com/wardi/django-filebrowser-no-grappelli
@@ -20,7 +19,7 @@ class CompatibleFileBrowseField(FileBrowseField):
     """
 
     def to_python(self, value):
-        value = super(CompatibleFileBrowseField, self).to_python(value)
+        value = super().to_python(value)
         if value.__class__ is FileObject and 'url' not in value.__class__.__dict__:
             value.__class__ = PatchedFileObject
         return value
@@ -38,7 +37,7 @@ class AnyFileField(CompatibleFileBrowseField):
         }
 
         defaults.update(kwargs)
-        super(AnyFileField, self).__init__(*args, **defaults)
+        super().__init__(*args, **defaults)
 
 
 class AnyImageField(CompatibleFileBrowseField):
@@ -53,4 +52,4 @@ class AnyImageField(CompatibleFileBrowseField):
         }
 
         defaults.update(kwargs)
-        super(AnyImageField, self).__init__(*args, **defaults)
+        super().__init__(*args, **defaults)

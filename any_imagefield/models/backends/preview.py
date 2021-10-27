@@ -14,4 +14,4 @@ class AnyImageField(models.ImageField):
         kwargs['widget'] = ImagePreviewWidget   # hard override for admin
         defaults = {'form_class': ImagePreviewField}
         defaults.update(kwargs)
-        return super(AnyImageField, self).formfield(**defaults)
+        return super().formfield(**defaults)

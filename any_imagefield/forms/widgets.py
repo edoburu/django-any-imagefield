@@ -7,7 +7,7 @@ class ImagePreviewWidget(AdminFileWidget):
     """
     An :class:`~django.forms.FileInput` widget that also displays a preview of the image.
     """
-    template_with_initial = u'%(clear_template)s</p><p>%(input_text)s: %(input)s'
+    template_with_initial = '%(clear_template)s</p><p>%(input_text)s: %(input)s'
 
     def render(self, name, value, *args, **kwargs):
         is_image = False
@@ -20,7 +20,7 @@ class ImagePreviewWidget(AdminFileWidget):
             is_image = mime_type and mime_type.startswith('image/')
 
         # Render different field for replacing
-        input_field = super(ImagePreviewWidget, self).render(name, value, *args, **kwargs)
+        input_field = super().render(name, value, *args, **kwargs)
         if not value:
             return input_field
         else:
